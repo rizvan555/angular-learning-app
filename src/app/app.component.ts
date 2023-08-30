@@ -2,9 +2,15 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  template: `
+    <h1>Value Capture</h1>
+    <input type="text" (keyup)="getValue($event)" />
+  `,
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'angular-learning1';
+  getValue(event: any) {
+    console.log(event.target.value);
+  }
 }
+
